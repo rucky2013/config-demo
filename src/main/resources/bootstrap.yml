@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: config-demo
+  profiles:
+    active: native
+eureka:
+  instance:
+    non-secure-port: ${server.port:12307}
+    metadata-map:
+      instanceId: ${spring.application.name}:${random.value}
+  client:
+    service-url:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:12306}/eureka/

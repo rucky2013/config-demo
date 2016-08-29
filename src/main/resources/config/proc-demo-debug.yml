@@ -1,0 +1,29 @@
+security:
+  basic:
+    enabled: false
+    realm: ALEXA
+  enable-csrf: true
+  headers:
+    xss: true
+  ignored:
+  - /css/**
+  - /js/**
+  - /images/**
+  - /webjars/**
+  - /**/favicon.ico
+  - /beans
+  - /h2-console/**
+logging:
+  level:
+    root: info
+spring:
+  datasource:
+    url: jdbc:h2:mem:demo
+    driver-class-name: org.h2.Driver
+    username: demo
+    password: demo
+  jpa:
+    database: h2
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
